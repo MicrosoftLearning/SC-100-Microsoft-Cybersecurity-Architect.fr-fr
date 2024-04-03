@@ -14,7 +14,7 @@ Les liens hypertexte vers chaque étude de cas sont répertoriés ci-dessous.
 {% assign casestudy= site.pages | where_exp:"page", "page.url contains '/Instructions/CaseStudyv2/'" %}
 | Module | Étude de cas |
 | --- | --- | 
-{% pour l’activité dans l’étude de cas %}| {{ activity.casestudy.module }} | [{{ activity.casestudy.title }}]({{ site.github.url }}{{ activity.url }}) |
+{% for activity in casestudy %}| {{ activity.casestudy.module }} | [{{ activity.casestudy.title }}]({{ site.github.url }}{{ activity.url }}) |
 {% endfor %}
 
 
@@ -23,5 +23,5 @@ Les liens hypertexte vers chaque étude de cas sont répertoriés ci-dessous.
 {% assign casestudy= site.pages | where_exp:"page", "page.url contains '/Instructions/CaseStudy/'" %}
 | Module | Étude de cas |
 | --- | --- | 
-{% pour l’activité dans l’étude de cas %}| {{ activity.casestudy.module }} | [{{ activity.casestudy.title }}]({{ site.github.url }}{{ activity.url }}) |
+{% for activity in casestudy %}| {{ activity.casestudy.module }} | [{{ activity.casestudy.title }}]({{ site.github.url }}{{ activity.url }}) |
 {% endfor %}
