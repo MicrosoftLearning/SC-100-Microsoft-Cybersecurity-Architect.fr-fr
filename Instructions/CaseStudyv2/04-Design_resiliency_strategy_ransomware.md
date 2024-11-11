@@ -14,7 +14,7 @@ Contoso a lancé sa migration vers le cloud, à l’exception de certaines donn�
  
 Il y a eu plusieurs cas récents très médiatisés d’attaque par ransomware impliquant les concurrents de Contoso sur le marché des services de santé. Le PDG et le CISO sont préoccupés par le fait que Contoso n’a pas encore mis en place de plan pour atténuer le risque d’une attaque par ransomware. Le CISO a personnellement demandé que vous élaboriez un plan de réaction et d’atténuation du risque d’attaque par ransomware, que vous présenterez aux dirigeants de l’entreprise dans deux semaines. Certains des membres du personnel informatique les plus haut gradés ont clamé que la menace de ransomware est exagérée et que l’entreprise a seulement besoin de bonnes sauvegardes et d’une sécurité du périmètre rigoureuse.
  
-### Configuration requise
+### Spécifications
 
 * Le plan de réponse et d’atténuation du risque d’attaque par ransomware doit inclure non seulement l’infrastructure locale critique et les services cloud, mais également les données de l’entreprise stockées sur les ordinateurs portables de l’entreprise et les appareils mobiles utilisés par les employés sur le terrain.
 * Le PDG et le CISO ont adopté une approche dure stipulant qu’ils ne paieront jamais les pirates informatiques à l’origine d’un ransomware ou ne négocieront jamais avec eux. Ils ont déclaré qu’en cas d’attaque par ransomware, leur objectif est de rétablir les systèmes critiques dans les 12 heures, et de restaurer les fonctionnalités complètes dans les 48 heures.

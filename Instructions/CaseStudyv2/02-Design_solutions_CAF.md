@@ -12,7 +12,7 @@ Cet exercice d’étude de cas permet d’acquérir une expérience dans l’ex�
 - En vertu des conditions de l’accord, la transition doit prendre au maximum 6 mois
 - Contoso Banking prévoit de créer la solution FinTech de nouvelle génération à l’aide de solutions natives cloud. La version MVP 1 doit être terminée dans 6 semaines.
 
-### Configuration requise
+### Spécifications
 
 Contoso Group n’utilise aucun service cloud, l’infrastructure est entièrement hébergée dans son propre centre de données. L’environnement qui fera partie de Contoso Banking inclut :
 
