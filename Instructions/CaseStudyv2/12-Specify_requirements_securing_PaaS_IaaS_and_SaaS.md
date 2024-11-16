@@ -10,7 +10,7 @@ Cet exercice d’étude de cas permet d’acquérir une expérience dans l’ex�
 
 Tailwind Traders est une société fictive de vente au détail de produits d’aménagement de la maison. Elle a des points de vente de matériel dans le monde entier et en ligne. Le CISO de Tailwind Traders est conscient des opportunités offertes par Azure, mais il comprend également la nécessité d’une gouvernance forte. À défaut de sécurité renforcée et d’une excellente architecture de référence, l’entreprise risque de rencontrer des difficultés pour gérer l’environnement Azure et les coûts, qui ne sont pas faciles à suivre ni à contrôler. Le directeur de la sécurité souhaite savoir comment Azure gère et applique les normes de sécurité.
 
-## Configuration requise
+## Spécifications
 
 Pour mettre en œuvre cette vision, le CIO a engagé un nouveau CISO (responsable de la sécurité des informations). Le nouveau CISO a commencé à planifier sa stratégie pour sécuriser les charges de travail PaaS, IaaS et SaaS. Dans le cadre de cette stratégie, il a établi que l’entreprise doit :
 

@@ -24,7 +24,7 @@ Bien qu’ils se trouvent sur place avec leurs clients, les médecins utilisent 
 qui stockent les données de suivi et de surveillance localement. Ces données sont protégées à l’aide d’un chiffrement du stockage propriétaire  
 et chaque professionnel de la santé doit se connecter à son appareil à l’aide d’informations d’identification stockées localement avant d’accéder aux données. 
  
-### Configuration requise
+### Spécifications
 
 À mesure que la migration cloud se poursuit et s’étend, Contoso prévoit de déplacer toutes les données  
 et applications locales dans le cloud, à l’exception des applications non visées. 
