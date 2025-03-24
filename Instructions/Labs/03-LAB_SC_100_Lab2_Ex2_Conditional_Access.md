@@ -34,10 +34,7 @@ Dans cette tâche, vous allez créer un emplacement nommé à l’aide de l’ad
 
 1. Connectez-vous à la machine virtuelle Client 1 (LON-Sc1) en tant que compte **lon-sc1\admin**. Le mot de passe doit vous être fourni par votre fournisseur d’hébergement de labo.
 1. Ouvrez une fenêtre **PowerShell** en sélectionnant le menu Démarrer avec le bouton droit de la souris, puis sélectionnez **Terminal**.
-1. Entrez la cmdlet suivante pour vérifier votre adresse IP externe actuelle :
-    ```powershell
-    curl ifconfig.me | Select-String -Pattern '.'
-    ```
+1. Entrez la cmdlet suivante pour vérifier votre adresse IP externe actuelle : `Invoke-RestMethod -Uri "http://ifconfig.me/ip"`
 1. Notez l’adresse IP renvoyée par powershell.
 1. Ouvrez **Microsoft Edge**, sélectionnez la barre d’adresse, accédez à **`https://entra.microsoft.com`** et connectez-vous au portail Entra ID en tant qu’**administrateur MOD**admin@WWLxZZZZZZ.onmicrosoft.com (où ZZZZZZ est votre ID de locataire unique fourni par votre fournisseur d’hébergement de labo). Le mot de passe d’administrateur doit être fourni par l’hébergeur de votre labo.
 1. Si vous êtes invité à configurer une authentification multifacteur, suivez les instructions.
@@ -85,7 +82,7 @@ Vous avez créé et activé votre stratégie d’accès conditionnel pour restre
 Dans un scénario réel, vous effectuez une période de test plus longue avec un groupe plus grand et plus représentatif pour vous assurer qu’aucun incident imprévisible ne fausse le résultat.
 
 1. Ouvrez une nouvelle fenêtre **InPrivate** dans votre navigateur **Microsoft Edge** en sélectionnant son icône dans la barre des tâches avec le bouton droit de la souris, puis sélectionnez **Nouvelle fenêtre InPrivate**.
-1. Sélectionnez la barre d’adresse, accédez à **`https://portal.microsoft.com`** et connectez-vous portail M365 en tant qu’**Allan Deyoung**alland@WWLxZZZZZZ.onmicrosoft.com (où ZZZZZZ est votre ID de locataire unique fourni par votre fournisseur d’hébergement de labo). Le mot de passe de l’utilisateur doit vous être fourni par votre fournisseur d’hébergement de labo.
+1. Sélectionnez la barre d’adresse, accédez à **`https://portal.microsoft.com`** et connectez-vous au portail M365 en tant qu’**Allan Deyoung**alland@WWLxZZZZZZ.onmicrosoft.com (où ZZZZZZ est votre ID de locataire unique fourni par votre fournisseur d’hébergement de labo). Le mot de passe de l’utilisateur doit vous être fourni par votre fournisseur d’hébergement de labo.
 1. Dans la boîte de dialogue Rester connecté ?, cochez la case **Ne plus afficher**, puis sélectionnez **Non**.
 1. La connexion a réussi, vous pouvez donc fermer la fenêtre **InPrivate**.
 1. Revenez à votre fenêtre de navigateur Edge dans laquelle vous devriez toujours vous trouver dans le portail Entra ID **https://entra.microsoft.com**.
