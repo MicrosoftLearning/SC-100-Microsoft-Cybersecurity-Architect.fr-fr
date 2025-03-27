@@ -53,13 +53,13 @@ Vous avez créé l’espace de travail Log Analytics pour votre déploiement Sen
 
 ### Tâche 2 : Créer Sentinel
 
-Dans cette tâche, vous allez ajouter Sentinel à l’espace de travail Log Analytics créé et ajouter des journaux de démonstration. Comme le locataire de démonstration ne dispose actuellement pas de données dans l’espace de travail Log Analytics, vous importez des journaux de démonstration pour avoir une meilleure idée du fonctionnement de Sentinel.
+Dans cette tâche, vous allez ajouter Sentinel à l’espace de travail Log Analytics créé.
 
 1. Vous devez toujours être connecté au Portail Azure **https://portal.azure.com**.
 1. Dans la barre de recherche, dans la bannière bleue située en haut de la page, entrez **Microsoft Sentinel**, puis sélectionnez-le dans les résultats de la recherche répertoriés sous Services.
 1. Sur la page **Microsoft Sentinel**, sélectionnez **Créer**.
 1. Sur la page **Ajouter Microsoft Sentinel à un espace de travail**, l’espace de travail Log Analytics créé précédemment devrait apparaître.  Sélectionnez **law-sentinel**, puis **Ajouter**.
-1. L’ajout de Sentinel à l’espace de travail peut prendre quelques minutes.  Une fois ajouté, la page **Microsoft Sentinel | Actualités et guides** s’affiche.  Un message vous informe que l’évaluation gratuite de Microsoft Sentinel est activée.  Sélectionnez **OK**.
+1. L’ajout de Sentinel à l’espace de travail peut prendre quelques minutes.  Une fois ajouté, la page **Microsoft Sentinel | Actualités et guides** s’affiche.  Un message vous informe que l’évaluation gratuite de Microsoft Sentinel est activée.  Sélectionnez **OK**.
 1. Au centre de la page, sélectionnez **Accéder au hub de contenu**.  Le hub de contenu est l’endroit où vous allez télécharger des solutions. Explorez le hub de contenu à votre gré.
 
 Vous avez correctement déployé Sentinel sur l’espace de travail Log Analytics. 
@@ -67,17 +67,14 @@ Vous avez correctement déployé Sentinel sur l’espace de travail Log Analyti
 ### Tâche 3 : configurer le RBAC
 
 Vous devez sécuriser l’accès en fonction du moindre privilège. Vous allez créer des attributions de rôles pour les exigences de rôle spécifiques. Dans votre déploiement de production à venir, le centre de sécurité des opérations (SOC) comprendra deux rôles différents.
-En outre, l’équipe réseau a besoin d’accéder aux journaux Cisco Umbrella. Vous devez vous assurer que l’équipe réseau ne peut accéder qu’à ces journaux.
+
 
 #### Spécifications relatives aux autorisations
 
 | Rôle | Autorisations |
 |---|---|
-| Analyste de sécurité | Afficher les données, incidents, classeurs et autres ressources Sentinel |
-| | Affectation/abandon d’incidents. |
-| Ingénieur Sécurité | Créer et modifier des classeurs et des règles d’analyse |
-| | Installer et mettre à jour des solutions à partir du hub de contenu |
-| Équipe réseau | Autorisations de lecture pour le groupe : **NOC** sur la table : **Cisco_Umbrella_dns_CL**|
+| Analyste de sécurité | Afficher les données, les incidents, les classeurs et autres ressources Sentinel, ainsi qu’assigner/fermer des incidents |
+| Ingénieur Sécurité | Créer et modifier des classeurs et des règles analytiques Installer et mettre à jour des solutions à partir du hub de contenu |
 
 ---
 
@@ -99,40 +96,8 @@ En outre, l’équipe réseau a besoin d’accéder aux journaux Cisco Umbrella.
 1. Dans le panneau **Sélectionner des membres**, recherchez le groupe **Ingénieurs SOC**.  Dans les résultats de recherche, sélectionnez **Ingénieurs SOC** et appuyez sur **Sélectionner** pour ajouter l’attribution de rôle.
 1. Sélectionner **Vérifier + attribuer** 2 fois
 1. Sélectionnez l’onglet **Attributions de rôles** et vérifiez que les attributions de rôle sont définies.
-1. Vous allez maintenant ajouter un rôle personnalisé. Sélectionnez **Ajouter**, puis **Ajouter un rôle personnalisé** dans le menu déroulant.
-1. Nommez-le **`NOC-CiscoUmbrellaCL-Read`**.
-1. Sous **Autorisations de base**, sélectionnez **Commencer à partir de zéro**.
-1. Cliquez sur **Suivant**.
-1. Sous l’onglet **Autorisations**, sélectionnez **Ajouter des autorisations**.
-1. Cherchez **`Microsoft.OperationalInsights`** et sélectionnez la carte **Azure Log Analytics**.
-1. Ajoutez les autorisations suivantes.
-    - Microsoft.OperationalInsights/workspaces
-        - Lire : obtenir un espace de travail
-        - Autre : rechercher des données d’espace de travail
 
-    - Microsoft.OperationalInsights/workspaces/analytics
-        - Autre : Rechercher
-
-    - Microsoft.OperationalInsights/workspaces/query
-        - Lire : interroger les données dans un espace de travail
-
-    - Microsoft.OperationalInsights/workspaces/tables/query
-        - Lire : interroger des données de table d’un espace de travail
-
-1. Sélectionnez **Vérifier + créer**.
-1. Sélectionnez **Créer**, puis **OK**.
-1. Dans la barre de recherche supérieure, recherchez **`Resource groups`** puis sélectionnez **rg_eastus_soc**.
-1. Ouvrez l’espace de travail Log Analytics **law-sentinel**.
-1. Dans le volet de navigation de gauche, développez **Paramètres**, puis sélectionnez **Tables**.
-1. Recherchez **`Cisco_Umbrella_dns_CL`**.
-1. Cliquez sur les points de suspension (...) puis sélectionnez **Contrôle d’accès (IAM)**.
-1. Sélectionnez **Ajouter** > **Ajouter une attribution de rôle**.
-1. Recherchez **`NOC-CiscoUmbrellaCL-Read`**, puis sélectionnez le rôle personnalisé.
-1. Cliquez sur **Suivant**.
-1. Sélectionnez **Sélectionner des membres**, cherchez **NOC**, sélectionnez-le dans les résultats de la recherche, puis cliquez sur **Sélectionner**
-1. Sélectionner **Vérifier + attribuer** 2 fois
-
-Vous avez créé le modèle d’accès basé sur les rôles pour l’équipe chargée des opérations de sécurité de Contoso, créé un rôle personnalisé pour l’équipe réseau et attribué le rôle sur la table spécifique de votre espace de travail Log Analytics.
+Vous avez créé le modèle d’accès basé sur les rôles correspondant aux exigences des rôles pour l’équipe chargée des opérations de sécurité de Contoso.
 
 ### Tâche 4 : créer un classeur
 
